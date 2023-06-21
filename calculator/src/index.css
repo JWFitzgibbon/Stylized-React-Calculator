@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "IBM Plex Mono", "Roboto",
+    "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #33332d;
+  color: #fff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 30rem;
+  border: 3px solid #fff;
+  box-shadow: -3px 5px #fff;
+  background-color: #2e2e29;
+}
+
+button {
+  width: 25%;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 3rem;
+  background-color: transparent;
+  color: #fff;
+  border: 3px solid #fff;
+  box-shadow: -3px 5px #fff;
+  font-family: IBM Plex Mono;
+}
+
+button:hover {
+  transition: 0.3s;
+  background-color: #fff;
+  color: #33332d;
+}
+
+button:active {
+  background-color: #F7F382;
+  transition: 0s;
+}
+
+.form {
+  max-width: 30rem;
+  margin: 2rem auto;
+  padding: 0.6rem 1rem 2rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: #2e2e29;
+  box-shadow: -3px 5px #fff;
+  border: 3px solid #fff;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3.75rem;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: #fff;
+  border: 3px solid #fff;
+  box-shadow: -3px 5px #fff;
+  outline: none;
+  font-family: IBM Plex Mono;
+}
+
+.submit-btn button {
+  width: 100%;
+}
