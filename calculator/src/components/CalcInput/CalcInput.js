@@ -6,6 +6,8 @@ const initialUserInput = {
   operator: "+",
 };
 
+const buttonValues = ["+", "-", "*", "/", "<", ">", "%", "=="];
+
 function CalcInput() {
   const [userInput, setUserInput] = useState(initialUserInput);
 
@@ -38,6 +40,8 @@ function CalcInput() {
         " " +
         userInput["num2"]
     );
+
+    setUserInput(initialUserInput);
   };
 
   return (
@@ -60,34 +64,17 @@ function CalcInput() {
           ></input>
         </p>
       </div>
-      <p>
+      <p className="preview">
         {userInput["num1"]} {userInput["operator"]} {userInput["num2"]}
       </p>
       <div>
-        <button type="button" value="+" onClick={clickHandler}>
-          +
-        </button>
-        <button type="button" value="-" onClick={clickHandler}>
-          -
-        </button>
-        <button type="button" value="x" onClick={clickHandler}>
-          x
-        </button>
-        <button type="button" value="/" onClick={clickHandler}>
-          ÷
-        </button>
-        <button type="button" value="<" onClick={clickHandler}>
-          &lt;
-        </button>
-        <button type="button" value=">" onClick={clickHandler}>
-          &gt;
-        </button>
-        <button type="button" value="%" onClick={clickHandler}>
-          %
-        </button>
-        <button type="button" value="==" onClick={clickHandler}>
-          ==
-        </button>
+        {buttonValues.map((button, i) => {
+          return (
+            <button key={i} type="button" value={button} onClick={clickHandler}>
+              {button}
+            </button>
+          );
+        })}
       </div>
       <div className="submit-btn">
         <button type="submit">Enter</button>

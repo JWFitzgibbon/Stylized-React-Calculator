@@ -86,3 +86,29 @@ button:active {
 .submit-btn button {
   width: 100%;
 }
+
+.preview {
+  margin: 1rem auto;
+  padding: 0.5rem;
+  width: 10rem;
+  border: 3px solid #fff;
+  box-shadow: -3px 5px #fff;
+  background-color: #F7F382;
+  color: #33332d;
+}
+
+.results-container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: .6rem 1rem 0rem;
+  font-weight: 600;
+  background-color: #1a1a17;
+  box-shadow: -3px 5px #fff;
+  border: 3px solid #fff;
+}
+
+code {
+  padding: 0.5rem 0.5rem 0.5rem;
+  border: 1px solid #303030;
+  background-color: #1F1F1F;
+}
