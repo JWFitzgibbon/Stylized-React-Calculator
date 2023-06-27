@@ -8,7 +8,7 @@ const initialUserInput = {
 
 const buttonValues = ["+", "-", "*", "/", "<", ">", "%", "=="];
 
-function CalcInput() {
+function CalcInput(props) {
   const [userInput, setUserInput] = useState(initialUserInput);
 
   const clickHandler = (event) => {
@@ -42,6 +42,7 @@ function CalcInput() {
     );
 
     setUserInput(initialUserInput);
+    props.onCalculate(userInput);
   };
 
   return (
