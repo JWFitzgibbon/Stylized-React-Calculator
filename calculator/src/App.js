@@ -6,10 +6,36 @@ import Header from "./components/Header/Header";
 
 function App() {
   const calculateHandler = (props) => {
-    console.log(props.num1, props.operator, props.num2);
-    if (props.operator === "+") {
-      console.log(props.num1 + props.num2)
+    let result;
+    switch (props.operator) {
+      case "+":
+        result = +props.num1 + +props.num2;
+        break;
+      case "-":
+        result = +props.num1 - +props.num2;
+        break;
+      case "*":
+        result = +props.num1 * +props.num2;
+        break;
+      case "/":
+        result = +props.num1 / +props.num2;
+        break;
+      case "<":
+        result = +props.num1 < +props.num2;
+        break;
+      case ">":
+        result = +props.num1 > +props.num2;
+        break;
+      case "%":
+        result = +props.num1 % +props.num2;
+        break;
+      case "==":
+        result = +props.num1 === +props.num2;
+        break;
+      default:
+        result = "Something went wrong";
     }
+    console.log(result);
   };
 
   return (
