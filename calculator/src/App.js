@@ -47,7 +47,7 @@ function App() {
     <div>
       <Header />
       <CalcInput onCalculate={calculateHandler} />
-      {userInput && <CalcResults displayResult={result} />}
+      {userInput && <CalcResults entered={userInput} displayResult={result} />}
     </div>
   );
 }
