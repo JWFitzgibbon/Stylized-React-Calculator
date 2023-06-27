@@ -6,7 +6,10 @@ import Header from "./components/Header/Header";
 
 function App() {
   const calculateHandler = (props) => {
-    console.log(props.operator);
+    console.log(props.num1, props.operator, props.num2);
+    if (props.operator === "+") {
+      console.log(props.num1 + props.num2)
+    }
   };
 
   return (
