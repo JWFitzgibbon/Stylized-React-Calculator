@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CalcInput from "./components/CalcInput/CalcInput";
 import CalcResults from "./components/CalcResults/CalcResults";
 import Header from "./components/Header/Header";
@@ -5,44 +6,48 @@ import Header from "./components/Header/Header";
 // Going to need a switch statement somewhere here to turn userInput["operator"] into an actual operator
 
 function App() {
+  const [userInput, setUserInput] = useState(null);
   const calculateHandler = (props) => {
-    let result;
-    switch (props.operator) {
+    setUserInput(props);
+  };
+
+  let result;
+  if (userInput) {
+    switch (userInput.operator) {
       case "+":
-        result = +props.num1 + +props.num2;
+        result = +userInput.num1 + +userInput.num2;
         break;
       case "-":
-        result = +props.num1 - +props.num2;
+        result = +userInput.num1 - +userInput.num2;
         break;
       case "*":
-        result = +props.num1 * +props.num2;
+        result = +userInput.num1 * +userInput.num2;
         break;
       case "/":
-        result = +props.num1 / +props.num2;
+        result = +userInput.num1 / +userInput.num2;
         break;
       case "<":
-        result = +props.num1 < +props.num2;
+        result = +userInput.num1 < +userInput.num2;
         break;
       case ">":
-        result = +props.num1 > +props.num2;
+        result = +userInput.num1 > +userInput.num2;
         break;
       case "%":
-        result = +props.num1 % +props.num2;
+        result = +userInput.num1 % +userInput.num2;
         break;
-      case "==":
-        result = +props.num1 === +props.num2;
+      case "===":
+        result = +userInput.num1 === +userInput.num2;
         break;
       default:
         result = "Something went wrong";
     }
-    console.log(result);
-  };
+  }
 
   return (
     <div>
       <Header />
       <CalcInput onCalculate={calculateHandler} />
-      <CalcResults />
+      {userInput && <CalcResults displayResult={result} />}
     </div>
   );
 }
