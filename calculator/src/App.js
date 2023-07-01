@@ -2,6 +2,7 @@ import { useState } from "react";
 import CalcInput from "./components/CalcInput/CalcInput";
 import CalcResults from "./components/CalcResults/CalcResults";
 import Header from "./components/Header/Header";
+import Wrapper from "./components/Helpers/Wrapper";
 
 // Going to need a switch statement somewhere here to turn userInput["operator"] into an actual operator
 
@@ -44,11 +45,11 @@ function App() {
   }
 
   return (
-    <div>
+    <Wrapper>
       <Header />
       <CalcInput onCalculate={calculateHandler} />
       {userInput && <CalcResults entered={userInput} displayResult={result} />}
-    </div>
+    </Wrapper>
   );
 }
 
